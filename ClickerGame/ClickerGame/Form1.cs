@@ -12,7 +12,7 @@ namespace ClickerGame
 {
     public partial class Form1 : Form
     {
-        Upgrade1 upgrade1;
+        Upgrade upgrade1;
         int timerRunTime;
         double total;
         int pps;
@@ -21,7 +21,7 @@ namespace ClickerGame
         public Form1()
         {
             InitializeComponent();
-            upgrade1 = new Upgrade1();
+            upgrade1 = new Upgrade();
             total = 0;
             pps = 0;
             timerRunTime = 0;
