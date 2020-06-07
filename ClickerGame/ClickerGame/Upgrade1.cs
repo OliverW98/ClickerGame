@@ -7,18 +7,28 @@ using System.Threading.Tasks;
 namespace ClickerGame
 {
     class Upgrade1
-    {
-        private int numberOf { get; set; }
-        private int pfs { get; set; }
-
+    {       
         public Upgrade1()
         {
             numberOf = 0;
-            pfs = 10;
+            pointsProduction = 10;
         }
 
+        int numberOf;
 
+        public int NumberOf 
+        {
+            get { return numberOf; }
+            set
+            {
+                numberOf = numberOf + 1;
+                pps = numberOf * pointsProduction;
+            }
+        }
+        public int pointsProduction { get; set; }
+        public int pps { get; private set; }
 
+ 
 
     }
 }

@@ -8,3 +8,13 @@ C:\Users\Oliver\source\repos\ClickerGame\ClickerGame\obj\Debug\ClickerGame.cspro
 C:\Users\Oliver\source\repos\ClickerGame\ClickerGame\obj\Debug\ClickerGame.csproj.CoreCompileInputs.cache
 C:\Users\Oliver\source\repos\ClickerGame\ClickerGame\obj\Debug\ClickerGame.exe
 C:\Users\Oliver\source\repos\ClickerGame\ClickerGame\obj\Debug\ClickerGame.pdb
+C:\Users\Oliver\Documents\ClickerGame\ClickerGame\ClickerGame\obj\Debug\ClickerGame.csprojAssemblyReference.cache
+C:\Users\Oliver\Documents\ClickerGame\ClickerGame\ClickerGame\obj\Debug\ClickerGame.Form1.resources
+C:\Users\Oliver\Documents\ClickerGame\ClickerGame\ClickerGame\obj\Debug\ClickerGame.Properties.Resources.resources
+C:\Users\Oliver\Documents\ClickerGame\ClickerGame\ClickerGame\obj\Debug\ClickerGame.csproj.GenerateResource.cache
+C:\Users\Oliver\Documents\ClickerGame\ClickerGame\ClickerGame\obj\Debug\ClickerGame.csproj.CoreCompileInputs.cache
+C:\Users\Oliver\Documents\ClickerGame\ClickerGame\ClickerGame\obj\Debug\ClickerGame.exe
+C:\Users\Oliver\Documents\ClickerGame\ClickerGame\ClickerGame\obj\Debug\ClickerGame.pdb
+C:\Users\Oliver\Documents\ClickerGame\ClickerGame\ClickerGame\bin\Debug\ClickerGame.exe.config
+C:\Users\Oliver\Documents\ClickerGame\ClickerGame\ClickerGame\bin\Debug\ClickerGame.exe
+C:\Users\Oliver\Documents\ClickerGame\ClickerGame\ClickerGame\bin\Debug\ClickerGame.pdb

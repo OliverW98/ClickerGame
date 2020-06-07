@@ -35,6 +35,7 @@
             this.btnBuyUpgrade1 = new System.Windows.Forms.Button();
             this.lblUpgrade1Name = new System.Windows.Forms.Label();
             this.lblUpgrade1owned = new System.Windows.Forms.Label();
+            this.lblPointsPerSecond = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblPointsTotal
@@ -90,11 +91,22 @@
             this.lblUpgrade1owned.TabIndex = 4;
             this.lblUpgrade1owned.Text = "0";
             // 
+            // lblPointsPerSecond
+            // 
+            this.lblPointsPerSecond.AutoSize = true;
+            this.lblPointsPerSecond.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPointsPerSecond.Location = new System.Drawing.Point(40, 86);
+            this.lblPointsPerSecond.Name = "lblPointsPerSecond";
+            this.lblPointsPerSecond.Size = new System.Drawing.Size(58, 20);
+            this.lblPointsPerSecond.TabIndex = 5;
+            this.lblPointsPerSecond.Text = "0 pp/s";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 803);
+            this.Controls.Add(this.lblPointsPerSecond);
             this.Controls.Add(this.lblUpgrade1owned);
             this.Controls.Add(this.lblUpgrade1Name);
             this.Controls.Add(this.btnBuyUpgrade1);
@@ -115,6 +127,7 @@
         private System.Windows.Forms.Button btnBuyUpgrade1;
         private System.Windows.Forms.Label lblUpgrade1Name;
         private System.Windows.Forms.Label lblUpgrade1owned;
+        private System.Windows.Forms.Label lblPointsPerSecond;
     }
 }
 

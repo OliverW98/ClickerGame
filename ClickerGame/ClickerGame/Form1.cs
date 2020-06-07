@@ -12,17 +12,19 @@ namespace ClickerGame
 {
     public partial class Form1 : Form
     {
-
+        Upgrade1 upgrade1 = new Upgrade1();
         int total;
-        int pfs;
+        int pps;
 
         public Form1()
         {
             InitializeComponent();
             total = 0;
-            pfs = 0;
+            pps = 0;
             timer.Start();
         }
+
+
 
         private void btnClickMe_Click(object sender, EventArgs e)
         {
@@ -32,8 +34,10 @@ namespace ClickerGame
 
         private void btnBuyUpgrade1_Click(object sender, EventArgs e)
         {
-
-            lblUpgrade1owned.Text = " Owned";
+            upgrade1.NumberOf++;
+            lblUpgrade1owned.Text = upgrade1.NumberOf + " Owned";
+            pps = upgrade1.pps;
+            lblPointsPerSecond.Text = pps.ToString();
         }
     }
 }
