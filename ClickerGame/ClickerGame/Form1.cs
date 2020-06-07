@@ -14,7 +14,7 @@ namespace ClickerGame
     {
         Upgrade1 upgrade1;
         int timerRunTime;
-        int total;
+        double total;
         int pps;
         bool upgrade1Purchased;
 
@@ -26,6 +26,7 @@ namespace ClickerGame
             pps = 0;
             timerRunTime = 0;
             upgrade1Purchased = false;
+            lblUpgrade1Cost.Text = "Cost :" + upgrade1.cost;
             timer.Start();
         }
 
@@ -41,13 +42,30 @@ namespace ClickerGame
         {           
             upgrade1.NumberOf++;
             upgrade1Purchased = true;
+            total = Math.Round(total - upgrade1.cost);
+            upgrade1.cost = Math.Round(upgrade1.cost * 1.5);
             lblUpgrade1owned.Text = upgrade1.NumberOf + " Owned";
             pps = upgrade1.pps;
-            lblPointsPerSecond.Text = pps.ToString();
+            lblPointsPerSecond.Text = pps + " pp/s";
+            lblUpgrade1Cost.Text = "Cost :" + upgrade1.cost;
+        }
+
+        private void CostCheck()
+        {
+            if (total >= upgrade1.cost)
+            {
+                btnBuyUpgrade1.Enabled = true;
+            }
+            else
+            {
+                btnBuyUpgrade1.Enabled = false;
+            }
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            CostCheck();
+
             timerRunTime++;
 
             if (timerRunTime % 100 == 0 && upgrade1Purchased == true )
