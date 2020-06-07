@@ -21,7 +21,7 @@ namespace ClickerGame
         public Form1()
         {
             InitializeComponent();
-            upgrade1 = new Upgrade();
+            upgrade1 = new Upgrade(10, 10);
             total = 0;
             pps = 0;
             timerRunTime = 0;

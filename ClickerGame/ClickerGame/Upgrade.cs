@@ -8,17 +8,16 @@ namespace ClickerGame
 {
     class Upgrade : UpgradeBase
     {
-        public Upgrade()
+        public Upgrade( int pp , int c)
         {
-
-            pointsProduction = 10;
-            cost = 10;
+            pointsProduction = pp;
+            cost = c;
         }
 
 
-        public int pointsProduction { get; set; }
+        public new int pointsProduction { get; set; }
 
-        public double cost { get; set; }
+        public new double cost { get; set; }
 
     }
 }
