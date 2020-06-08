@@ -37,6 +37,10 @@
             this.lblUpgrade1owned = new System.Windows.Forms.Label();
             this.lblPointsPerSecond = new System.Windows.Forms.Label();
             this.lblUpgrade1Cost = new System.Windows.Forms.Label();
+            this.lblUpgrade2Cost = new System.Windows.Forms.Label();
+            this.lblUpgrade2owned = new System.Windows.Forms.Label();
+            this.lblUpgrade2Name = new System.Windows.Forms.Label();
+            this.btnBuyUpgrade2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblPointsTotal
@@ -98,10 +102,10 @@
             // lblPointsPerSecond
             // 
             this.lblPointsPerSecond.AutoSize = true;
-            this.lblPointsPerSecond.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPointsPerSecond.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPointsPerSecond.Location = new System.Drawing.Point(40, 86);
             this.lblPointsPerSecond.Name = "lblPointsPerSecond";
-            this.lblPointsPerSecond.Size = new System.Drawing.Size(58, 20);
+            this.lblPointsPerSecond.Size = new System.Drawing.Size(67, 24);
             this.lblPointsPerSecond.TabIndex = 5;
             this.lblPointsPerSecond.Text = "0 pp/s";
             // 
@@ -115,11 +119,55 @@
             this.lblUpgrade1Cost.TabIndex = 6;
             this.lblUpgrade1Cost.Text = "Cost : ";
             // 
+            // lblUpgrade2Cost
+            // 
+            this.lblUpgrade2Cost.AutoSize = true;
+            this.lblUpgrade2Cost.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpgrade2Cost.Location = new System.Drawing.Point(456, 289);
+            this.lblUpgrade2Cost.Name = "lblUpgrade2Cost";
+            this.lblUpgrade2Cost.Size = new System.Drawing.Size(81, 25);
+            this.lblUpgrade2Cost.TabIndex = 10;
+            this.lblUpgrade2Cost.Text = "Cost : ";
+            // 
+            // lblUpgrade2owned
+            // 
+            this.lblUpgrade2owned.AutoSize = true;
+            this.lblUpgrade2owned.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpgrade2owned.Location = new System.Drawing.Point(456, 251);
+            this.lblUpgrade2owned.Name = "lblUpgrade2owned";
+            this.lblUpgrade2owned.Size = new System.Drawing.Size(104, 25);
+            this.lblUpgrade2owned.TabIndex = 9;
+            this.lblUpgrade2owned.Text = "0 Owend";
+            // 
+            // lblUpgrade2Name
+            // 
+            this.lblUpgrade2Name.AutoSize = true;
+            this.lblUpgrade2Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpgrade2Name.Location = new System.Drawing.Point(40, 251);
+            this.lblUpgrade2Name.Name = "lblUpgrade2Name";
+            this.lblUpgrade2Name.Size = new System.Drawing.Size(121, 25);
+            this.lblUpgrade2Name.TabIndex = 8;
+            this.lblUpgrade2Name.Text = "Upgrade 2";
+            // 
+            // btnBuyUpgrade2
+            // 
+            this.btnBuyUpgrade2.Location = new System.Drawing.Point(254, 251);
+            this.btnBuyUpgrade2.Name = "btnBuyUpgrade2";
+            this.btnBuyUpgrade2.Size = new System.Drawing.Size(195, 63);
+            this.btnBuyUpgrade2.TabIndex = 7;
+            this.btnBuyUpgrade2.Text = "Buy";
+            this.btnBuyUpgrade2.UseVisualStyleBackColor = true;
+            this.btnBuyUpgrade2.Click += new System.EventHandler(this.btnBuyUpgrade2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 803);
+            this.Controls.Add(this.lblUpgrade2Cost);
+            this.Controls.Add(this.lblUpgrade2owned);
+            this.Controls.Add(this.lblUpgrade2Name);
+            this.Controls.Add(this.btnBuyUpgrade2);
             this.Controls.Add(this.lblUpgrade1Cost);
             this.Controls.Add(this.lblPointsPerSecond);
             this.Controls.Add(this.lblUpgrade1owned);
@@ -144,6 +192,10 @@
         private System.Windows.Forms.Label lblUpgrade1owned;
         private System.Windows.Forms.Label lblPointsPerSecond;
         private System.Windows.Forms.Label lblUpgrade1Cost;
+        private System.Windows.Forms.Label lblUpgrade2Cost;
+        private System.Windows.Forms.Label lblUpgrade2owned;
+        private System.Windows.Forms.Label lblUpgrade2Name;
+        private System.Windows.Forms.Button btnBuyUpgrade2;
     }
 }
 
