@@ -13,6 +13,7 @@ namespace ClickerGame
             numberOf = 0;
             pointsProduction = pp;
             cost = c;
+            purchased = false;
         }
 
         int numberOf;
@@ -27,6 +28,8 @@ namespace ClickerGame
             }
         }
         public int pointsProduction { get; set; }
+
+        public bool purchased { get; set; }
 
         public double cost { get; set; }
         public int pps { get; private set; }

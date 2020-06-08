@@ -17,8 +17,6 @@ namespace ClickerGame
         int timerRunTime;
         double total;
         int pps;
-        bool upgrade1Purchased;
-        bool upgrade2Purchased;
 
         public Form1()
         {
@@ -28,8 +26,6 @@ namespace ClickerGame
             total = 0;
             pps = 0;
             timerRunTime = 0;
-            upgrade1Purchased = false;
-            upgrade2Purchased = false;
             lblUpgrade1Cost.Text = "Cost :" + upgrade1.cost;
             lblUpgrade2Cost.Text = "Cost :" + upgrade2.cost;
             timer.Start();
@@ -45,21 +41,17 @@ namespace ClickerGame
 
         private void btnBuyUpgrade1_Click(object sender, EventArgs e)
         {           
-            upgrade1.NumberOf++;
-            upgrade1Purchased = true;
             purchaseCost(upgrade1);
-            lblUpgrade1owned.Text = upgrade1.NumberOf + " Owned";
             updatePPS();
+            lblUpgrade1owned.Text = upgrade1.NumberOf + " Owned";
             lblUpgrade1Cost.Text = "Cost :" + upgrade1.cost;
         }
 
         private void btnBuyUpgrade2_Click(object sender, EventArgs e)
         {
-            upgrade2.NumberOf++;
-            upgrade2Purchased = true;
             purchaseCost(upgrade2);
-            lblUpgrade2owned.Text = upgrade2.NumberOf + " Owned";
             updatePPS();
+            lblUpgrade2owned.Text = upgrade2.NumberOf + " Owned";
             lblUpgrade2Cost.Text = "Cost :" + upgrade2.cost;
         }
 
@@ -71,6 +63,9 @@ namespace ClickerGame
 
         private void purchaseCost(Upgrade upgrade)
         {
+
+            upgrade.NumberOf++;
+            upgrade.purchased = true;
             total = Math.Round(total - upgrade.cost);
             upgrade.cost = Math.Round(upgrade.cost * 1.5);
         }
@@ -104,11 +99,11 @@ namespace ClickerGame
 
             timerRunTime++;
 
-            if (timerRunTime % 100 == 0 && upgrade1Purchased == true )
+            if (timerRunTime % 100 == 0 && upgrade1.purchased)
             {
                 total = total + upgrade1.pps;
             }
-            if (timerRunTime % 50 == 0 && upgrade2Purchased == true)
+            if (timerRunTime % 100 == 0 && upgrade2.purchased)
             {
                 total = total + upgrade2.pps;
             }
