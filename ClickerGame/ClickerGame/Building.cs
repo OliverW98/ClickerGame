@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ClickerGame
 {
-    class Upgrade 
+    class Building 
     {
-        public Upgrade( int pp , int c)
+        public Building( int pp , int c)
         {
             numberOf = 0;
             pointsProduction = pp;
@@ -28,9 +28,7 @@ namespace ClickerGame
             }
         }
         public int pointsProduction { get; set; }
-
         public bool purchased { get; set; }
-
         public double cost { get; set; }
         public int pps { get; private set; }
     }
