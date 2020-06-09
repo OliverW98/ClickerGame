@@ -14,6 +14,7 @@ namespace ClickerGame
     {
         Building building1;
         Building building2;
+        Upgrade upgrade1; 
         int timerRunTime;
         double total;
         int pps;
@@ -23,11 +24,13 @@ namespace ClickerGame
             InitializeComponent();
             building1 = new Building(10, 10); // need to create an economy
             building2 = new Building(50, 50);
+            upgrade1 = new Upgrade(2, 150);
             total = 0;
             pps = 0;
             timerRunTime = 0;
             lblBuilding1Cost.Text = "Cost :" + building1.cost;
             lblBuilding2Cost.Text = "Cost :" + building2.cost;
+            lblUpgrade1Cost.Text = "Cost :" + upgrade1.cost;
             timer.Start();
         }
 
@@ -39,57 +42,76 @@ namespace ClickerGame
             lblPointsTotal.Text = total + " Points";
         }
 
-        private void btnBuyUpgrade1_Click(object sender, EventArgs e)
+        private void btnBuyBuilding1_Click(object sender, EventArgs e)
         {
-            purchaseUpgrade(building1);
+            purchaseBuilding(building1);
             updatePPS();
-            lblBuilding1production.Text = building1.pps + " pp/s";
-            lblBuilding1owned.Text = building1.NumberOf + " Owned";
+            lblBuilding1production.Text = building1.pps() + " pp/s";
+            lblBuilding1owned.Text = building1.numberOf + " Owned";
             lblBuilding1Cost.Text = "Cost :" + building1.cost;
         }
 
-        private void btnBuyUpgrade2_Click(object sender, EventArgs e)
+        private void btnBuyBuilding2_Click(object sender, EventArgs e)
         {
-            purchaseUpgrade(building2);
+            purchaseBuilding(building2);
             updatePPS();
-            lblBuilding2production.Text = building2.pps + " pp/s";
-            lblBuilding2owned.Text = building2.NumberOf + " Owned";
+            lblBuilding2production.Text = building2.pps() + " pp/s";
+            lblBuilding2owned.Text = building2.numberOf + " Owned";
             lblBuilding2Cost.Text = "Cost :" + building2.cost;
+        }
+
+        private void btnBuyUpgrade1_Click(object sender, EventArgs e)
+        {
+            upgrade1.numberOf++;
+            building1.pointsProduction = building1.pointsProduction * upgrade1.effect;
+            updatePPS();
+            lblBuilding1production.Text = building1.pps() + " pp/s";
+            lblUpgrade1Owned.Text = upgrade1.numberOf + " Owned";
+            total = Math.Round(total - upgrade1.cost);
+            upgrade1.cost = Math.Round(upgrade1.cost * 10);
+            lblUpgrade1Cost.Text = "Cost :" + upgrade1.cost;
         }
 
         private void updatePPS()
         {
-            pps = building1.pps + building2.pps;
+            pps = building1.pps() + building2.pps();
             lblPointsPerSecond.Text = pps + " pp/s";
         }
 
-        private void purchaseUpgrade(Building upgrade)
+        private void purchaseBuilding(Building building)
         {
-            upgrade.NumberOf++;
-            upgrade.purchased = true;
-            total = Math.Round(total - upgrade.cost);
-            upgrade.cost = Math.Round(upgrade.cost * 1.5); //1.5 is hard coded - maybe a var in the object for individual cost increases. 
+            building.numberOf++;
+            building.purchased = true;
+            total = Math.Round(total - building.cost);
+            building.cost = Math.Round(building.cost * 1.5); //1.5 is hard coded - maybe a var in the object for individual cost increases. 
         }
-
 
         private void CostCheck()
         {
             if (total >= building1.cost)
+            {
+                btnBuyBuilding1.Enabled = true;
+            }
+            else
+            {
+                btnBuyBuilding1.Enabled = false;
+            }
+
+            if (total >= building2.cost)
+            {
+                btnBuyBuilding2.Enabled = true;
+            }
+            else
+            {
+                btnBuyBuilding2.Enabled = false;
+            }
+            if (total >= upgrade1.cost)
             {
                 btnBuyUpgrade1.Enabled = true;
             }
             else
             {
                 btnBuyUpgrade1.Enabled = false;
-            }
-
-            if (total >= building2.cost)
-            {
-                btnBuyUpgrade2.Enabled = true;
-            }
-            else
-            {
-                btnBuyUpgrade2.Enabled = false;
             }
 
         }
@@ -100,16 +122,18 @@ namespace ClickerGame
 
             timerRunTime++;
 
-            if (timerRunTime % 100 == 0 && building1.purchased)
+            if (timerRunTime % 10 == 0 && building1.purchased)
             {
-                total = total + building1.pps;
+                total = total + building1.pps();
             }
-            if (timerRunTime % 100 == 0 && building2.purchased)
+            if (timerRunTime % 10 == 0 && building2.purchased)
             {
-                total = total + building2.pps;
+                total = total + building2.pps();
             }
 
             lblPointsTotal.Text = total + " Points";
         }
+
+
     }
 }
