@@ -11,14 +11,14 @@ namespace ClickerGame
         public Upgrade(int e, int c)
         {
             numberOf = 0;
+            numBuildingRequired = 15;
             effect = e;
             cost = c;
-            purchased = false;
         }
 
         public int numberOf { get; set; }
+        public int numBuildingRequired { get; set; }
         public int effect { get; set; }
         public double cost { get; set; }
-        public bool purchased { get; set; }
     }
 }
